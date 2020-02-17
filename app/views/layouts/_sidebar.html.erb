@@ -1,9 +1,14 @@
-<div class="col-lg-3">
+<div class="col-md-3">
 	<div class="user-info">
 		<h2 class="title">User info</h2>
 		<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
+		<p>name</p>
 		<%= user.name %>
+		<p>introduction</p>
 		<%= user.introduction %>
+		<%= link_to edit_user_path(user.id) do %>
+		<button type="button" class="btn active" role="button">Edit</button>
+		<% end %>
 	</div>
 	<div class="new-book">
 		<h2 class="title">New book</h2>
@@ -13,7 +18,7 @@
 			<p>Opinion</p>
 			<%= f.text_area :body %>
 
-			<%= f.submit "Create Book" %>
+			<%= f.submit('Create Book', class: 'btn btn-primary active aria-pressed="false" my-1 mb-5 px-5') %>
 		<% end %>
 	</div>
 </div>

@@ -1,2 +1,26 @@
-<h1>Users#index</h1>
 <%= render 'layouts/sidebar', books: @books, book: @book, user: @user %>
+<div class="col-md-9">
+	<div class="books-index">
+		<h2 class="title">Users</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>image</th>
+					<th>name</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @users.each do |user| %>
+				<tr class="book-contents">
+					<td>
+						<%= attachment_image_tag user, :profile_image, :fill, 30, 30, fallback: "no_image2.jpg" %>
+					</td>
+					<td><%= user.name %></td>
+					<td><%= link_to "Show", user_path(user.id) %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

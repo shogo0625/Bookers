@@ -5,7 +5,7 @@
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    <%= f.text_field :name %>
   </div>
 
   <div class="field">
@@ -27,7 +27,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit('Sign Up', class: 'btn btn-success active aria-pressed="false" my-1 mb-5 px-5') %>
   </div>
 <% end %>
 
