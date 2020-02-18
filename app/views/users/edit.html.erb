@@ -1,5 +1,6 @@
-<h2 class="title">Users info</h2>
+<h2 class="title">User info</h2>
 <%= form_for(@user) do |f| %>
+<%= render 'layouts/error_messages_user' %>
 <p>Name</p>
 <%= f.text_field :name %>
 <p>Image</p>
